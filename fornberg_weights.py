@@ -19,7 +19,7 @@ def weights(z,x,m):
     for i in range(1,n):
         mn=np.min([i,m])+1; c2=1; c5=c4; c4=x[i]-z
         for j in range(i):
-            c3=float(x[i]-x[j]); c2=float(c2*c3)
+            c3=float(x[i]-x[j]); c2*=c3
             if j==i-1:
                 c[1:mn,i]=c1*(np.arange(1,mn)*c[:mn-1,i-1]-c5*c[1:mn,i-1])/c2
                 c[0,i]=-c1*c5*c[0,i-1]/c2
